@@ -1,8 +1,6 @@
 # Mobile-Based Pathfinding Algorithms (BFS, DFS, A*)
 
-<p align="center">
-  <img src="images/IMG_2218.jpg" width="600" alt="Pathfinding_Results">
-</p>
+![pathfinder_results](image/IMG_2218.jpg)
 
 
 A complete implementation of **Breadth-First Search (BFS)**, **Depth-First Search (DFS)**, and **A\*** pathfinding algorithms with **real-time console-based grid visualization**, developed and tested entirely in a **mobile-based cloud Python environment**.
