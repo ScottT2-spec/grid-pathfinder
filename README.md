@@ -1,7 +1,7 @@
 # Mobile-Based Pathfinding Algorithms (BFS, DFS, A*)
 
 <p align="center">
-  <img src="images/image.jpg" width="600" alt="Pathfinding_Results">
+  <img src="images/IMG_2218.jpg" width="600" alt="Pathfinding_Results">
 </p>
 
 
