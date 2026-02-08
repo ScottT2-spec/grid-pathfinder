@@ -1,5 +1,9 @@
 # Mobile-Based Pathfinding Algorithms (BFS, DFS, A*)
 
+![Pathfinding Visualization](images/pathfinding_results.png)
+
+![Pathfinding Visualization](images/pathfinding_results.png)
+
 A complete implementation of **Breadth-First Search (BFS)**, **Depth-First Search (DFS)**, and **A\*** pathfinding algorithms with **real-time console-based grid visualization**, developed and tested entirely in a **mobile-based cloud Python environment**.
 
 This project demonstrates how classical Artificial Intelligence (AI) search algorithms can be efficiently implemented without relying on heavy graphical libraries or desktop-only tools, making it lightweight, portable, and highly accessible.
