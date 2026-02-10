@@ -1,160 +1,50 @@
-# Mobile-Based Pathfinding Algorithms (BFS, DFS, A*)
+# Grid Pathfinder — BFS, DFS, and A*
 
 ![pathfinder_results](image/IMG_2218.jpg)
 
+I built this to understand how pathfinding algorithms actually work. The idea is simple: you have a grid with a start point, a goal, and some walls. The algorithm has to find a path from start to goal without walking through walls.
 
-A complete implementation of **Breadth-First Search (BFS)**, **Depth-First Search (DFS)**, and **A\*** pathfinding algorithms with **real-time console-based grid visualization**, developed and tested entirely in a **mobile-based cloud Python environment**.
+I implemented three different approaches and compared them:
+- **BFS (Breadth-First Search)** — checks every possible path layer by layer. Slow but always finds the shortest one.
+- **DFS (Depth-First Search)** — goes as deep as it can before backtracking. Fast sometimes, but the path it finds is usually longer than it needs to be.
+- **A\* Search** — the smart one. Uses a heuristic (Manhattan distance) to guide the search toward the goal instead of blindly exploring. Finds the shortest path while checking way fewer cells.
 
-This project demonstrates how classical Artificial Intelligence (AI) search algorithms can be efficiently implemented without relying on heavy graphical libraries or desktop-only tools, making it lightweight, portable, and highly accessible.
+## Results
 
----
+| Algorithm | Cells Checked | Path Length | Shortest Path? |
+|-----------|--------------|-------------|---------------|
+| BFS | 21 | 11 | Yes |
+| DFS | 22 | 13 | No |
+| A* | 14 | 11 | Yes |
 
-## 🚀 Project Overview
+A* checked only 14 cells and still found the optimal path. DFS checked more cells and found a longer path. That's the difference a good heuristic makes.
 
-Pathfinding algorithms form the foundation of many real-world technologies including robotics navigation, autonomous vehicles, game AI, network routing, logistics optimization, and maze solving.
+## How the grid looks
 
-This project focuses on **grid-based pathfinding**, where an intelligent agent must move from a **start node (S)** to a **goal node (G)** while avoiding obstacles. Three major search algorithms are implemented and compared:
+```
+S . . # . .
+. # . # . .
+. # . . . #
+. . # # . .
+# . . . # .
+. . # . . G
+```
 
-- **Breadth-First Search (BFS)**
-- **Depth-First Search (DFS)**
-- **A\* Search Algorithm (Heuristic-Guided Optimal Search)**
+- `S` = start, `G` = goal, `#` = wall, `*` = path the algorithm found, `.` = open space
 
-Each algorithm explores the grid differently, producing distinct performance characteristics in terms of:
-- Nodes explored
-- Path length
-- Efficiency
-- Optimality
+## How to run it
 
-Results are visualized using a **console-based grid visualization system** optimized for **mobile Python execution environments**.
+I built this on my phone using a cloud Python environment (no laptop). You can run it the same way:
 
----
+1. Open [Google Colab](https://colab.research.google.com/) or any Python environment
+2. Paste the code from `pathfinding.py`
+3. Run it
 
-## 📱 Mobile-Based Cloud Development
+No external libraries needed — just standard Python.
 
-This entire project was:
+## What I learned
 
-- Designed  
-- Implemented  
-- Debugged  
-- Tested  
-- Executed  
-
-**Completely on a mobile device using a cloud-based Python environment.**
-
-This demonstrates:
-- Platform-independent software engineering
-- Resource-efficient algorithm design
-- Adaptability to constrained computing environments
-- Practical engineering creativity
-
-Instead of depending on heavy visualization frameworks, the project uses **terminal-based visualization**, ensuring seamless execution inside **mobile Python apps and cloud interpreters**.
-
----
-
-## 🧠 Algorithms Implemented
-
-### Breadth-First Search (BFS)
-- Explores the grid level by level.
-- Guarantees the **shortest path** in unweighted environments.
-- Explores more nodes before finding the goal.
-
-### Depth-First Search (DFS)
-- Explores deeply along one path before backtracking.
-- Does **not guarantee shortest path**.
-- Often explores unnecessary branches.
-
-### A\* Search Algorithm
-- Uses **Manhattan distance heuristic**.
-- Combines actual cost and estimated future cost.
-- Produces **optimal paths efficiently**.
-- Explores significantly fewer nodes.
-
----
-
-## 🗺️ Grid Visualization System
-
-Instead of graphical plotting, this project implements **text-based grid visualization**, optimized for mobile environments.
-
-### Symbol Legend
-
-| Symbol | Meaning |
-|----------|-----------|
-| `S` | Start node |
-| `G` | Goal node |
-| `*` | Path |
-| `#` | Obstacle / Wall |
-| `.` | Free space |
-
-### Sample Visualization Output
-This visualization allows:
-- Immediate visual interpretation
-- Direct algorithm comparison
-- Lightweight execution without graphics libraries
-
----
-
-## ⚙️ How It Works
-
-### Grid Environment
-The environment is represented as a **2D matrix**:
-- `S` marks the start position.
-- `G` marks the target destination.
-- `#` represents obstacles.
-- `.` represents open cells.
-
-### Algorithm Execution Flow
-Each algorithm:
-1. Starts from the start cell.
-2. Explores valid neighboring cells.
-3. Tracks visited nodes.
-4. Stops when the goal is reached.
-5. Reconstructs the final path.
-6. Visualizes the result on the grid.
-
-### Algorithm Logic
-
-**BFS**
-- Uses a queue
-- Expands uniformly
-- Always finds the shortest path
-
-**DFS**
-- Uses a stack
-- Explores deeply before backtracking
-- May produce longer paths
-
-**A\***
-- Uses a priority queue
-- Applies heuristic guidance
-- Efficient and optimal
-
----
-
-## 📊 Performance Comparison
-
-| Algorithm | Nodes Visited | Path Length | Optimal |
-|-------------|----------------|---------------|------------|
-| BFS | 21 | 11 | ✅ |
-| DFS | 22 | 13 | ❌ |
-| A* | 14 | 11 | ✅ |
-
-A* achieves optimal results with significantly fewer explored nodes.
-
----
-
-## 🏗️ Project Structure
----
-
-## ▶️ How To Run
-
-### Mobile (Recommended)
-Use any mobile-based Python cloud environment:
-- Learn Python App
-- Pydroid
-- Replit Mobile
-
-Paste the code and run directly.
-
-### Desktop
-```bash
-python pathfinding.py
+- BFS guarantees shortest path but wastes time checking cells that are obviously going the wrong way
+- DFS is unpredictable — sometimes it gets lucky, usually it doesn't
+- A* is the one you'd actually use in a real application (GPS, games, robotics)
+- You don't need a fancy computer to learn algorithms — a phone works fine
